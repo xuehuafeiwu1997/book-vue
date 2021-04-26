@@ -26,29 +26,37 @@ const routes = [
   {
     path: '/',
     name: '导航一',
-    component: App
+    component: App,
+    children:[
+      {
+        path: '/pageOne',
+        name: '页面一',
+        component: PageOne
+      },
+      {
+        path: '/pageTwo',
+        name: '页面二',
+        component: PageTwo
+      }
+    ]
   },
   {
-    path: '/pageOne',
-    name: '页面一',
-    component: PageOne
-  },
-  {
-    path: '/pageTwo',
-    name: '页面二',
-    component: PageTwo
-  },
-  {
-    path: '/pageThree',
-    name: '页面三',
-    component: PageThree
-  },
-  {
-    path: '/pageFour',
-    name: '页面四',
-    component: PageFour
-  },
-
+    path:'/navigation',
+    name:'导航二',
+    component: App,
+    children: [
+      {
+        path: '/pageThree',
+        name: '页面三',
+        component: PageThree
+      },
+      {
+        path: '/pageFour',
+        name: '页面四',
+        component: PageFour
+      }
+    ]
+  }
 ]
 
 const router = new VueRouter({

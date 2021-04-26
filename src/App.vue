@@ -2,17 +2,25 @@
   <div id="app">
     <el-container style="height: 500px; border: 1px solid #eee">
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu :default-openeds="['1', '3']" :default-active="'1-2'">
+<!--        <el-menu :default-openeds="['1', '3']" :default-active="'1-2'">-->
 
-          <el-submenu index="1">
-            <template slot="title"><i class="el-icon-message"></i>导航一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-submenu index="1-3">
-              <template slot="title"><i class="el-icon-setting"></i>选项三</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-            </el-submenu>
+<!--          <el-submenu index="1">-->
+<!--            <template slot="title"><i class="el-icon-message"></i>导航一</template>-->
+<!--              <el-menu-item index="1-1">选项1</el-menu-item>-->
+<!--              <el-menu-item index="1-2">选项2</el-menu-item>-->
+<!--            <el-submenu index="1-3">-->
+<!--              <template slot="title"><i class="el-icon-setting"></i>选项三</template>-->
+<!--              <el-menu-item index="1-1">选项1</el-menu-item>-->
+<!--              <el-menu-item index="1-2">选项2</el-menu-item>-->
+<!--            </el-submenu>-->
+<!--          </el-submenu>-->
+<!--        </el-menu>-->
+        <el-menu>
+          <el-submenu v-for="(item,index) in $router.options.routes" :index="index+''">
+            <template slot="title"><i class="el-icon-setting"></i>{{item.name}}</template>
+            <el-menu-item v-for="item2 in item.children">
+              {{item2.name}}
+            </el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>

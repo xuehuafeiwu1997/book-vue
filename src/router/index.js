@@ -5,7 +5,8 @@ import PageOne from "../views/PageOne.vue";
 import PageTwo from "../views/PageTwo.vue";
 import PageThree from "../views/PageThree.vue";
 import PageFour from "../views/PageFour.vue";
-import App from "../App.vue"
+// import App from "../App.vue"
+import Index from "../views/Index.vue"
 
 Vue.use(VueRouter)
 
@@ -26,7 +27,7 @@ const routes = [
   {
     path: '/',
     name: '导航一',
-    component: App,
+    component: Index,
     children:[
       {
         path: '/pageOne',
@@ -43,7 +44,7 @@ const routes = [
   {
     path:'/navigation',
     name:'导航二',
-    component: App,
+    component: Index,
     children: [
       {
         path: '/pageThree',

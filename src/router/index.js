@@ -11,6 +11,7 @@ const routes = [
   {
     path: '/',
     name: '图书管理',
+    show: true,
     component: Index,
     redirect: "/bookManage",
     children:[
@@ -24,12 +25,13 @@ const routes = [
         name: '添加图书',
         component: AddBook
       },
-      {
-        path: '/update',
-        component: BookUpdate
-      }
     ]
   },
+  {
+    path: '/update',
+    component: BookUpdate,
+    show: false
+  }
 ]
 
 const router = new VueRouter({

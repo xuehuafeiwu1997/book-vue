@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import BookManage from "../views/BookManage.vue";
 import AddBook from "../views/AddBook.vue";
 import Index from "../views/Index.vue"
+import BookUpdate from '../views/BookUpdate.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,10 @@ const routes = [
         component: AddBook
       }
     ]
+  },
+  {
+    path: '/update',
+    component: BookUpdate
   }
 ]
 

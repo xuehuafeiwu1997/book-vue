@@ -23,13 +23,13 @@ const routes = [
         path: '/addBook',
         name: '添加图书',
         component: AddBook
+      },
+      {
+        path: '/update',
+        component: BookUpdate
       }
     ]
   },
-  {
-    path: '/update',
-    component: BookUpdate
-  }
 ]
 
 const router = new VueRouter({
